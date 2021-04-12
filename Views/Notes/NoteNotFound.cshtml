@@ -1,0 +1,5 @@
+﻿@model NotFoundErrorDto
+@using System.Net;
+<h1 class="text-info">@HttpStatusCode.NotFound</h1>
+<h2 class="text-danger">An error occurred while processing your request</h2>
+<h3 class="text-danger font-italic">@Model.showErrorMsg(Model.noteId.ToString())</h3>

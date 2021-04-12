@@ -1,0 +1,27 @@
+﻿
+@model NotesListModelDto
+@{
+    ViewData["Title"] = "List";
+}
+
+<blockquote>
+    <p>Notes are important</p>
+    <footer>~Anonymous</footer>
+</blockquote>
+
+@if (Model.NotesList.Count() == 0)
+{
+    <h1>There are no notes yet, sorry </h1>
+}
+<div class="container ">
+    <ul class="list-group  ">
+        @foreach (var note in Model.NotesList)
+        {
+            <div class="container">
+                <a class="col-md-4 list-group-item list-group-item-action active" asp-controller="Notes" asp-action="Details" asp-route-id="@note.Id">@note.Title</a>
+                <a class="col-md-4 list-group-item list-group-item-action ">@note.Date</a>
+            </div>
+            <br/>
+        }
+    </ul>
+</div>

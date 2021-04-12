@@ -1,0 +1,26 @@
+﻿@model NoteModelDto
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container ">
+    <ul class="list-group  ">
+        <div class="container">
+            <h4> Title </h4>
+            <p class="col-md-4 list-group-item list-group-item-action ">@Model.Title</p>
+            <h4> Description </h4>
+            <textarea crows="3" class=" col-md-4 list-group-item ">@Model.Description</textarea>
+            <h4> Date </h4>
+            <p class="col-md-4 list-group-item l">@Model.Date</p>
+            <h4> Priority </h4>
+            <p class="col-md-4 list-group-item ">@Model.Priority</p>
+        </div>
+        <br />
+        <div class="form-group" >
+            <form asp-action="Remove" asp-route-id=@Model.Id method="post">
+                <input class="col-md-4 btn btn-danger" type="submit" value="Remove" />
+            </form>
+        </div>
+    </ul>
+</div>
+
